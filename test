@@ -16,7 +16,7 @@ local Tab1 = Win1:Server("Cheats", "") -- Server/Tab
 local Chann1 = Tab1:Channel("General") -- Channel 0_0
 local Chann2 = Tab1:Channel("Lagoona Lake (<3)") -- Channel 0_0
 local Chann3 = Tab1:Channel("Anthian City ($$$)")
-local Chann4 = Tab1:Channel("Aredia City ($$$)")
+local Chann4 = Tab1:Channel("Aredia City (AFK)")
 
 
 Chann1:Button("Heal", function()
@@ -135,10 +135,10 @@ end)
 
 
 
-Chann4:button("Money Farm", function()
-
-
-
+Chann4:Button("Money Farm", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-364, 38, 1474.265)
+wait(10)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1194.89001, 54, -702)
 end)
 
 
@@ -199,10 +199,10 @@ pcall(set_fps_cap, t)
 print(t) -- Script The Slider Executes
 end)
 
-local drop = Chann1:Dropdown("Pick me!",{"Option 1","Option 2","Option 3","Option 4","Option 5"}, function(bool) -- A DropDown
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new() -- tp location
-print(bool) -- You Know 0_o
-end)
+--local drop = Chann1:Dropdown("Pick me!",{"Option 1","Option 2","Option 3","Option 4","Option 5"}, function(bool) -- A DropDown
+--game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new() -- tp location
+--print(bool) -- You Know 0_o
+--end)
 
 Chann1:Label("cheat by j2sh") -- A Label (Ofc)
 
