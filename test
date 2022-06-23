@@ -17,15 +17,6 @@ local Chann1 = Tab1:Channel("General") -- Channel 0_0
 local Chann2 = Tab1:Channel("Lagoona Lake (<3)") -- Channel 0_0
 local Chann3 = Tab1:Channel("Anthian City ($$$)")
 
-
-
-
-Chann1:Button("Fly", function()
-SF["Fly"] = Data["Menu"]["map"]["fly"]
-DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
-end)
-
-
 Chann1:Button("Heal", function()
 Get:InvokeServer(AuthKey, "PDS", "getPartyPokeBalls")
 
