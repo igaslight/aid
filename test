@@ -62,12 +62,6 @@ global.NPCChat:say("Teleporting You.")
 end)
 
 
-Chann1:Button("Save", function()
-game.service'Players'.j2shn.MainGui.Menu.MenuButton.ButtonText:Fire(Click)
-
-DiscordLib:Notification("Notification", "Clicked", "Okay!") -- The Scirpt The Button Executes
-end)
-
 Chann2:Button("Afk Hatch", function()
  
     
