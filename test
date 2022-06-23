@@ -16,7 +16,7 @@ local Tab1 = Win1:Server("Cheats", "") -- Server/Tab
 local Chann1 = Tab1:Channel("General") -- Channel 0_0
 local Chann2 = Tab1:Channel("Lagoona Lake (<3)") -- Channel 0_0
 local Chann3 = Tab1:Channel("Anthian City ($$$)")
-local Chann4 = Tab1:Channel("Aredia City (AFK)")
+local Chann4 = Tab1:Channel("Aredia City ($$$)")
 
 
 Chann1:Button("Heal", function()
