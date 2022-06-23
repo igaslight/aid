@@ -16,6 +16,8 @@ local Tab1 = Win1:Server("Cheats", "") -- Server/Tab
 local Chann1 = Tab1:Channel("General") -- Channel 0_0
 local Chann2 = Tab1:Channel("Lagoona Lake (<3)") -- Channel 0_0
 local Chann3 = Tab1:Channel("Anthian City ($$$)")
+local Chann4 = Tab1:Channel("Aredia City (AFK)")
+
 
 Chann1:Button("Heal", function()
 Get:InvokeServer(AuthKey, "PDS", "getPartyPokeBalls")
@@ -49,17 +51,6 @@ global.NPCChat:say("Rejoining Server.")
 
 end)
 
-
-Chann1:Button("Farming Spot", function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1194.89001, 54, -702)
-game.Players.LocalPlayer.Character.HumanoidRootPart.Rotation = Rotation.new(180, -75, 60)
-
-
-
-DiscordLib:Notification("Notification", "Going To $ Hotspot", "Okay!") -- The Scirpt The Button Executes
-global.NPCChat:say("Teleporting You.")
-
-end)
 
 
 Chann2:Button("Afk Hatch", function()
@@ -141,6 +132,18 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-342.931
 --global.NPCChat:say("Teleporting You.")
 
 end)
+
+
+
+Chann4:button("Money Farm", function()
+
+
+
+end)
+
+
+
+
 
 
 
