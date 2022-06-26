@@ -190,12 +190,17 @@ SF["Fly"] = Data["Menu"]["map"]["fly"]
 --AddButton("Fly", SF["Fly"])
 
 AddButton("Save", function()
+
+local player = Workspace.Data.Player.Value --Get's player object and stores it in 'player' variable
+
+local var = player.Character.UpperTorso.Position -- Gets vector3 position
+
 local args = {
     [1] = "O@_^_<*i.4SAUL[0ti45",
     [2] = "PDS",
     [3] = "saveGame",
     [4] = {
---        ["location"] = "gniiCoXqvywjQ7LCdoeGAAAAAAgxor7edMIA",
+--        ["location"] = "var",
         ["expShareOn"] = false,
         ["options"] = {
             ["autosaveEnabled"] = false,
