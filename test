@@ -25,6 +25,33 @@ Get:InvokeServer(AuthKey, "PDS", "getPartyPokeBalls")
 DiscordLib:Notification("Notification", "Pokemon Healed", "Okay!") -- The Scirpt The Button Executes
 end)
 
+
+Chann1:Button("Save", function()
+
+local args = {
+    [1] = "O@_^_<*i.4SAUL[0ti45",
+    [2] = "PDS",
+    [3] = "saveGame",
+    [4] = {
+        ["location"] = "gniiCoXqvywjQ7LCdoeGAAAAAAgxor7edMIA",
+        ["expShareOn"] = false,
+        ["options"] = {
+            ["autosaveEnabled"] = false,
+            ["bagEnabled"] = false,
+            ["reduceGraphics"] = false,
+            ["lastUnstuckTick"] = 0
+        }
+    }
+}
+
+game:GetService("ReplicatedStorage").GET:InvokeServer(unpack(args))
+end)
+
+
+
+
+
+
 Chann1:Button("Servers", function()
 loadstring(game:HttpGet("https://www.scriptblox.com/raw/Server-Browser_80", true))();
 DiscordLib:Notification("Notification", "Available Servers Listed", "Okay!") -- The Scirpt The Button Executes
