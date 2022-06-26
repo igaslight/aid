@@ -187,7 +187,28 @@ SF["Fish"] = Data["Fishing"]["Fish"]
 SF["Fly"] = Data["Menu"]["map"]["fly"]
 
 
-AddButton("Fly", SF["Fly"])
+--AddButton("Fly", SF["Fly"])
+
+AddButton("Save", function()
+local args = {
+    [1] = "O@_^_<*i.4SAUL[0ti45",
+    [2] = "PDS",
+    [3] = "saveGame",
+    [4] = {
+--        ["location"] = "gniiCoXqvywjQ7LCdoeGAAAAAAgxor7edMIA",
+        ["expShareOn"] = false,
+        ["options"] = {
+            ["autosaveEnabled"] = false,
+            ["bagEnabled"] = false,
+            ["reduceGraphics"] = false,
+            ["lastUnstuckTick"] = 0
+        }
+    }
+}
+
+game:GetService("ReplicatedStorage").GET:InvokeServer(unpack(args))
+end)
+
 
 AddButton("Farm TP", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1194.89001, 54, -702)
