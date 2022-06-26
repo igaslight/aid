@@ -371,12 +371,12 @@ end)
 
 local key = game:GetService("UserInputService")
 
-key.InputBegan:Connect(function(input)
-	if input.KeyCode == Enum.KeyCode.F then
+--key.InputBegan:Connect(function(input)
+--	if input.KeyCode == Enum.KeyCode.F then
 
-global.NPCChat:say("Pokemon Fully Healed")
-	end
-end)
+--global.NPCChat:say("Pokemon Fully Healed")
+--	end
+--end)
 
 
 
