@@ -89,6 +89,7 @@ global.NPCChat:say("Rejoining Server.")
 end)
 
 
+
 Chann2:Button("Chat Translator", function()
 loadstring(game:HttpGetAsync('https://i.qts.life/r/ChatInlineTranslator.lua', true))()
 --[[
@@ -207,8 +208,16 @@ end)
 
 
 
+Chann2:Toggle("Toggle",false, function(bool)
+print(bool) -- Script The Toggle Executes
+end)
 
-
+local sldr = Chann2:Slider("FPS Control", 15, 320, 144, function(t) -- A Slider
+                                    -- lowest , largest , starting
+pcall(setfpscap, t)
+pcall(set_fps_cap, t)
+print(t) -- Script The Slider Executes
+end)
 
 
 
@@ -323,7 +332,7 @@ Chann1:Seperator() -- Keep This If You Want To
 
 
 
-Chann1:Toggle("Toggle",false, function(bool)
+
 
 
 
@@ -361,15 +370,7 @@ Library:Init()
 ---------------------------
 ---------------------------
 ---------------------------
-print(bool) -- Script The Toggle Executes
-end)
 
-local sldr = Chann1:Slider("FPS Control", 15, 320, 144, function(t) -- A Slider
-                                    -- lowest , largest , starting
-pcall(setfpscap, t)
-pcall(set_fps_cap, t)
-print(t) -- Script The Slider Executes
-end)
 
 --local drop = Chann1:Dropdown("Pick me!",{"Option 1","Option 2","Option 3","Option 4","Option 5"}, function(bool) -- A DropDown
 --game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new() -- tp location
