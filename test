@@ -106,12 +106,13 @@ end)
 
 
 Chann2:Button("Chat Logger", function()
+
 local marketplaceService = game:GetService("MarketplaceService")
 
 local isSuccessful, info = pcall(marketplaceService.GetProductInfo, marketplaceService, Game.PlaceId)
 if isSuccessful then
 
-local wh = 'https://discord.com/api/webhooks/991047971292471318/yp6L9Cv1WERC8gTQsrRV0HWVIssypCmY-Z-hFsUuf83KpYBW6uvDlFvB3qj5RDdR__Zc'
+local wh = 'https://discord.com/api/webhooks/991044916740231258/nqhhxq6hIVNSFNY12H1i2Cy9KoRi9Ond4TgjoDbwslFmZS6CJ_T_ntDghc5FlHaXTXHd'
 local embed1 = {
        ['title'] = 'Beginning of Message logs on '..info.Name.." at "..tostring(os.date("%m/%d/%y at time %X"))
    }
@@ -143,6 +144,7 @@ game.Players.PlayerAdded:Connect(function(plr)
        logMsg(wh, plr.Name, msg)
    end)
 end)
+end
 
 end)
 
