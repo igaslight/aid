@@ -271,13 +271,9 @@ end)
 
 
 
-local sldr = Chann2:Slider("FPS Control", 15, 320, 144, function(t) -- A Slider
-                                    -- lowest , largest , starting
-pcall(setfpscap, t)
-pcall(set_fps_cap, t)
-print(t) -- Script The Slider Executes
+
 	else
-		print("stop ")
+		local wh =' '
 	end
 end
 
@@ -285,17 +281,12 @@ end
 
 
 
+local sldr = Chann2:Slider("FPS Control", 15, 320, 144, function(t) -- A Slider
+                                    -- lowest , largest , starting
+pcall(setfpscap, t)
+pcall(set_fps_cap, t)
+print(t) -- Script The Slider Executes
 end)
-
-
-
-
-
-
-
-
-
-
 
 
 
