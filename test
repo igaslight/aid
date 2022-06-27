@@ -13,10 +13,20 @@ local Win1 = DiscordLib:Window("Pokemon Brick Bronze Client") -- Title/Name
 
 local Tab1 = Win1:Server("Cheats", "") -- Server/Tab
 
+
+
+-- channels
+
 local Chann1 = Tab1:Channel("General") -- Channel 0_0
-local Chann2 = Tab1:Channel("Lagoona Lake (<3)") -- Channel 0_0
-local Chann3 = Tab1:Channel("Anthian City ($$$)")
+local Chann2 = Tab1:Channel("Misc")
+local Chann3 = Tab1:Channel("Anthian City (💎)")
 local Chann4 = Tab1:Channel("Aredia City (AFK)")
+local Chann5 = Tab1:Channel("Lagoona Lake (🐠)") -- Channel 0_0
+
+
+
+
+
 
 
 Chann1:Button("Heal", function()
@@ -60,7 +70,7 @@ global.NPCChat:say("Opening Server List.")
 
 end)
 
-Chann1:Button("CTRL + Click Tp", function()
+Chann2:Button("CTRL + Click Tp", function()
 local Plr = game:GetService("Players").LocalPlayer local Mouse = Plr:GetMouse()
 
 Mouse.Button1Down:connect( function() if not game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftControl) then return end if not Mouse.Target then return end Plr.Character:MoveTo(Mouse.Hit.p) end )
@@ -79,7 +89,7 @@ global.NPCChat:say("Rejoining Server.")
 end)
 
 
-Chann1:Button("Chat Translator", function()
+Chann2:Button("Chat Translator", function()
 loadstring(game:HttpGetAsync('https://i.qts.life/r/ChatInlineTranslator.lua', true))()
 --[[
 af = "Afrikaans",
@@ -194,7 +204,28 @@ end)
 
 
 
-Chann2:Button("Afk Hatch", function()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Chann5:Button("Afk Hatch", function()
  
     
 --Services
@@ -220,7 +251,7 @@ DiscordLib:Notification("Notification", "Press m to toggle.", "Okay!") -- The Sc
 end)
 
 
-Chann2:Button("Daycare Man", function()
+Chann5:Button("Daycare Man", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(259.499, 109.8, -1059.0546)
 game.Players.LocalPlayer.Character.HumanoidRootPart.Rotation = Rotation.new(180, -75, 60)
 
@@ -232,7 +263,7 @@ global.NPCChat:say("Teleporting You.")
 end)
 
 
-Chann2:Button("PC", function()
+Chann5:Button("PC", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(312, 110, -1066)
 
 
@@ -468,7 +499,6 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord
 ---------------------------
 ---------------------------
 ---------------------------
-
 
 
 
