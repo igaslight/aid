@@ -223,7 +223,8 @@ end)
 
 Chann2:Toggle("Toggle",false, function(bool)
 
-local marketplaceService = game:GetService("MarketplaceService")
+if Bool then
+		local marketplaceService = game:GetService("MarketplaceService")
 
 local isSuccessful, info = pcall(marketplaceService.GetProductInfo, marketplaceService, Game.PlaceId)
 if isSuccessful then
@@ -263,11 +264,27 @@ end)
 end -- Script The Toggle Executes
 end)
 
+
+
+
+
+
+
+
 local sldr = Chann2:Slider("FPS Control", 15, 320, 144, function(t) -- A Slider
                                     -- lowest , largest , starting
 pcall(setfpscap, t)
 pcall(set_fps_cap, t)
 print(t) -- Script The Slider Executes
+	else
+		print("stop ")
+	end
+end
+
+
+
+
+
 end)
 
 
