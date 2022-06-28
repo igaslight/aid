@@ -1,7 +1,7 @@
 --pokemon brick bronze
 -- version 0
 
-wait(30) -- 30 usually
+wait(5) -- 30 usually
 
 
 local global = "_p" --Way too easy tbh
