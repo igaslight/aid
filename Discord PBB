@@ -33,7 +33,7 @@ local Tab1 = Win1:Server("Cheats", "") -- Server/Tab
 local Chann1 = Tab1:Channel("General") -- Channel 0_0
 local Chann2 = Tab1:Channel("Misc")
 local Chann3 = Tab1:Channel("Anthian City (💎)")
-local Chann4 = Tab1:Channel("Aredia City (AFK)")
+local Chann4 = Tab1:Channel("Aredia City (💰)")
 local Chann5 = Tab1:Channel("Lagoona Lake (🐠)") -- Channel 0_0
 
 
@@ -49,7 +49,7 @@ DiscordLib:Notification("Notification", "Pokemon Healed", "Okay!") -- The Scirpt
 end)
 
 
-Chann1:Button("Save (may be broken)", function()
+Chann1:Button("Save (Broken)", function()
 
 local args = {
     [1] = "O@_^_<*i.4SAUL[0ti45",
