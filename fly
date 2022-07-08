@@ -11,5 +11,12 @@ function GetMainData()
     end
 end
 Data = GetMainData()
-AuthKey = debug.getupvalue(Data["Network"]["getAuthKey"], 1)       
-SF["Fly"] = Data["Menu"]["map"]["fly"]  
+AuthKey = debug.getupvalue(Data["Network"]["getAuthKey"], 1)
+
+
+
+local SF = {}
+SF["Fish"] = Data["Fishing"]["Fish"]
+SF["Fly"] = Data["Menu"]["map"]["fly"]    
+
+SF["Fish"](nil, "GoodRod", LPlr.Character.Head.Position+LPlr.Character.Head.CFrame.LookVector*5)
