@@ -266,6 +266,22 @@ global.NPCChat:say("Chat Translating.")
 end)
 
 
+Chann2:Button("Absol + Eevee", function()
+local _p = nil
+        for _, v in pairs(getgc(true)) do
+           if typeof(v) == "table" then
+               if rawget(v, "PlayerData") then
+                   _p = v
+                   break
+               end
+           end
+        end
+        
+        print(_p.PlayerData:completeEvent("GetAbsol"))
+        print(_p.PlayerData:completeEvent("Eevee2Awarded"))
+global.NPCChat:say("Free Pokemon.")
+end)
+
 
 
 
