@@ -234,7 +234,9 @@ loadstring(game:HttpGet("https://pastebin.com/raw/1gtVMUz3"))()
 global.NPCChat:say("Rejoining The Game.")
 end)
 
-
+AddButton("Fish", function()
+SF["Fish"](nil, "GoodRod", LPlr.Character.Head.Position+LPlr.Character.Head.CFrame.LookVector*5)
+end)
 
 
 AddButton("Close Gui", function()
