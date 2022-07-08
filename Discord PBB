@@ -49,7 +49,7 @@ DiscordLib:Notification("Notification", "Pokemon Healed", "Okay!") -- The Scirpt
 end)
 
 
-Chann1:Button("Save", function()
+Chann1:Button("Save (may be broken)", function()
 
 local args = {
     [1] = "O@_^_<*i.4SAUL[0ti45",
@@ -100,6 +100,24 @@ DiscordLib:Notification("Notification", "Rejoining Server", "Okay!") -- The Scir
 global.NPCChat:say("Rejoining Server.")
 
 end)
+
+
+
+
+
+
+Chann1:Button("Tiny Gui Script", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/discordxj2shn0001/aid/main/tiny%20gui%20pbb"))()
+DiscordLib:Notification("Notification", "Opening mini gui", "Okay!") -- The Scirpt The Button Executes
+
+end)
+
+
+
+
+
+
+
 
 
 
@@ -492,7 +510,7 @@ AuthKey = debug.getupvalue(Data["Network"]["getAuthKey"], 1)
  
 local SF = {}
 SF["Fish"] = Data["Fishing"]["Fish"]
-
+SF["Fly"] = Data["Menu"]["map"]["fly"]
  
 AddButton("Heal", function()
 Get:InvokeServer(AuthKey, "PDS", "getPartyPokeBalls")
@@ -506,6 +524,9 @@ local key = game:GetService("UserInputService")
 --global.NPCChat:say("Pokemon Fully Healed")
 --	end
 --end)
+
+
+
 
 
 
@@ -570,6 +591,34 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord
 ---------------------------
 ---------------------------
 ---------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
