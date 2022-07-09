@@ -11,4 +11,4 @@ local _p = nil
         print(_p.PlayerData:completeEvent("GetAbsol"))
         print(_p.PlayerData:completeEvent("Eevee2Awarded"))
 global.NPCChat:say("Free Pokemon.")
-end)
+
