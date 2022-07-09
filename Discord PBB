@@ -146,7 +146,7 @@ DiscordLib:Notification("Notification", "Going To PC.", "Okay!")
 global.NPCChat:say("Teleporting You.")
 end)
 
-Chann6:Button("Pokeball", function()
+Chann6:Button("Show Rocks", function()
 game.Players.LocalPlayer.PlayerGui.FrontGui.Frame.Name = "Frame1"
 
 local Blocks = game.Players.LocalPlayer.PlayerGui.FrontGui.Frame.Frame.ImageButton
