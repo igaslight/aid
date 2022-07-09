@@ -1,0 +1,21 @@
+--Services
+local uis = game:GetService('UserInputService');
+local vim = game:GetService("VirtualInputManager")
+local bind = Enum.KeyCode.M;
+
+
+uis.InputBegan:connect(function(key)
+    if key.KeyCode == bind then
+        --Key Script
+      
+        
+        vim:SendKeyEvent(true, "W", false, nil) vim:SendKeyEvent(true, "A", false, nil)
+       wait(0)
+        
+    end;
+end)
+
+
+global.NPCChat:say("Press m to toggle.")   
+DiscordLib:Notification("Notification", "Press m to toggle.", "Okay!") -- The Scirpt The Button Executes
+end)
