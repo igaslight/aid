@@ -23,31 +23,17 @@
 loadstring(game:HttpGet"https://raw.githubusercontent.com/discordxj2shn0001/aid/main/discord%20webhook")()
 
 
-
-
-
 local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/discordxj2shn0001/aid/main/discord%20lib")()
-
-
-
 local Win1 = DiscordLib:Window("Pokemon Brick Bronze Client") -- Title/Name
-
 local Tab1 = Win1:Server("Cheats", "") -- Server/Tab
-
-
 
 -- channels
 
-local Chann1 = Tab1:Channel("General") -- Channel 0_0
+local Chann1 = Tab1:Channel("General") 
 local Chann2 = Tab1:Channel("Misc")
 local Chann3 = Tab1:Channel("Anthian City (💎)")
 local Chann4 = Tab1:Channel("Aredia City (💰)")
-local Chann5 = Tab1:Channel("Lagoona Lake (🐠)") -- Channel 0_0
-
-
-
-
-
+local Chann5 = Tab1:Channel("Lagoona Lake (🐠)") 
 
 
 Chann1:Button("Heal", function()
@@ -76,7 +62,7 @@ end)
 
 Chann1:Button("Servers", function()
 loadstring(game:HttpGet("https://www.scriptblox.com/raw/Server-Browser_80", true))();
-DiscordLib:Notification("Notification", "Available Servers Listed", "Okay!") -- The Scirpt The Button Executes
+DiscordLib:Notification("Notification", "Available Servers Listed", "Okay!") 
 global.NPCChat:say("Opening Server List.")
 end)
 
@@ -94,6 +80,14 @@ Chann1:Button("Tiny Gui Script", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/discordxj2shn0001/aid/main/tiny%20gui%20pbb"))()
 DiscordLib:Notification("Notification", "Opening mini gui", "Okay!") 
 end)
+
+--local drop = Chann1:Dropdown("Pick me!",{"Option 1","Option 2","Option 3","Option 4","Option 5"}, function(bool) -- A DropDown
+--game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new() -- tp location
+--print(bool) -- You Know 0_o
+--end)
+
+Chann1:Label("cheat by j2sh") -- A Label (Ofc)
+Chann1:Seperator() -- Keep This If You Want To
 
 Chann2:Button("Chat Logger", function()
 loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/discordxj2shn0001/aid/main/chat%20logger', true))()
@@ -116,61 +110,17 @@ pcall(set_fps_cap, t)
 print(t) -- Script The Slider Executes
 end)
 
-Chann5:Button("Afk Hatch", function()
-loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/discordxj2shn0001/aid/main/toggle%20spin%20in%20place', true))()
-end)
-
-Chann5:Button("Daycare Man", function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(259.499, 109.8, -1059.0546)
-game.Players.LocalPlayer.Character.HumanoidRootPart.Rotation = Rotation.new(180, -75, 60)
-DiscordLib:Notification("Notification", "Going To Daycare Man.", "Okay!") -- The Scirpt The Button Executes
-global.NPCChat:say("Teleporting You.")
-end)
-
-
-Chann5:Button("PC", function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(312, 110, -1066)
-
-
-
-
-
-
-DiscordLib:Notification("Notification", "Going To PC.", "Okay!") -- The Scirpt The Button Executes
-global.NPCChat:say("Teleporting You.")
-
-end)
-
-
-
-
 Chann3:Button("Pokeballs", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-264.97802, 66.57825, 582.357)
-
-
-
-
-
---DiscordLib:Notification("Notification", "Going To Ball Shop.", "Okay!") -- The Scirpt The Button Executes
+--DiscordLib:Notification("Notification", "Going To Ball Shop.", "Okay!")
 global.NPCChat:say("Teleporting You.")
-
 end)
-
-
 
 Chann3:Button("Stoneshop", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-342.9316, 59.25, 713.64)
-
-
-
-
-
---DiscordLib:Notification("Notification", "Going To Ball Shop.", "Okay!") -- The Scirpt The Button Executes
+--DiscordLib:Notification("Notification", "Going To Ball Shop.", "Okay!")
 --global.NPCChat:say("Teleporting You.")
-
 end)
-
-
 
 Chann4:Button("Money Farm TP", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-364, 38, 1474.265)
@@ -178,220 +128,30 @@ wait(10)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1194.89001, 54, -702)
 end)
 
-
-
-
-
-
-
-Chann1:Seperator() -- Keep This If You Want To
-
-
-
-
-
-
-
-
-
----------------------------
----------------------------
----------------------------
----------------------------
-
-
-
-
-Window:AddSlider({
-    text = 'Interval',
-    min = 0.01,
-    max = 2,
-    value = 1,
-    float = 0.01
-})
-Box_1 = Window:AddBox({
-    text = "AutoClick Position:",
-    value = "X: " .. X .. ", Y: " .. Y,
-    callback = function()
-        if tick()-LastU > 0.1 then
-            LastU = tick()
-            Box_1:SetValue("X: " .. X .. ", Y: " .. Y)
-        end
-    end
-})
+Chann5:Button("Afk Hatch", function()
+loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/discordxj2shn0001/aid/main/toggle%20spin%20in%20place', true))()
+end)
+    
+Chann5:Button("Daycare Man", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(259.499, 109.8, -1059.0546)
+game.Players.LocalPlayer.Character.HumanoidRootPart.Rotation = Rotation.new(180, -75, 60)
+DiscordLib:Notification("Notification", "Going To Daycare Man.", "Okay!") 
+global.NPCChat:say("Teleporting You.")
+end)
+    
+Chann5:Button("PC", function()
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(312, 110, -1066)
+DiscordLib:Notification("Notification", "Going To PC.", "Okay!") 
+global.NPCChat:say("Teleporting You.")
+end)
 
 Library:Init()
 
----------------------------
----------------------------
----------------------------
----------------------------
+-- main components
+loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/discordxj2shn0001/aid/main/key%20components%20(PBB)', true))()
 
-
---local drop = Chann1:Dropdown("Pick me!",{"Option 1","Option 2","Option 3","Option 4","Option 5"}, function(bool) -- A DropDown
---game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new() -- tp location
---print(bool) -- You Know 0_o
---end)
-
-Chann1:Label("cheat by j2sh") -- A Label (Ofc)
-
-
----------------------------
----------------------------
---pokemon brick bronze chat messages 
----------------------------
-
-local global = "_p" --Way too easy tbh
-for i,v in pairs(debug.getregistry()) do
-if type(v) == 'function' then
-for i,v in pairs(debug.getupvalues(v)) do
-local ret,tab = pcall(function() return v["NPCChat"] end)
-if ret == true and type(tab) == "table" then
-global = v
-break
-end
-end
-end
-end
-
-
----------------------------
----------------------------
----------------------------
----------------------------
-
- 
-Get = game:GetService("ReplicatedStorage").GET
-function GetMainData()
-    for i, v in pairs(debug.getregistry()) do
-        if typeof(v) == "function" then
-            for a, b in pairs(debug.getupvalues(v)) do
-                if typeof(b) == "table" and rawget(b, "Fishing") then
-                    return b
-                end
-            end
-        end
-    end
-end
-Data = GetMainData()
-AuthKey = debug.getupvalue(Data["Network"]["getAuthKey"], 1)
- 
-local SF = {}
-SF["Fish"] = Data["Fishing"]["Fish"]
-SF["Fly"] = Data["Menu"]["map"]["fly"]
- 
-AddButton("Heal", function()
-Get:InvokeServer(AuthKey, "PDS", "getPartyPokeBalls")
-end)
-
-local key = game:GetService("UserInputService")
-
---key.InputBegan:Connect(function(input)
---	if input.KeyCode == Enum.KeyCode.F then
-
---global.NPCChat:say("Pokemon Fully Healed")
---	end
---end)
-
-
-
-
-
-
----------------------------
----------------------------
----------------------------
----------------------------
-
-
-
-
--- AFK AFK AFK AFK AFK AFK BLOCK --
-local vu = game:GetService("VirtualUser")
-
-game:GetService("Players").LocalPlayer.Idled:connect(function()
-
-vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-
-wait(1)
-
-vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
-
-end)
-
-
-
----------------------------
----------------------------
----------------------------
----------------------------
+-- ANTI AFK BLOCK --
+loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/discordxj2shn0001/aid/main/anti%20afk', true))()
 
 -- FPS FPS FPS --
-
-_G.Settings = {
-    Players = {
-        ["Ignore Me"] = true, -- Ignore your Character
-        ["Ignore Others"] = true -- Ignore other Characters
-    },
-    Meshes = {
-        Destroy = false, -- Destroy Meshes
-        LowDetail = true -- Low detail meshes (NOT SURE IT DOES ANYTHING)
-    },
-    Images = {
-        Invisible = true, -- Invisible Images
-        LowDetail = false, -- Low detail images (NOT SURE IT DOES ANYTHING)
-        Destroy = false, -- Destroy Images
-    },
-    Other = {
-        ["No Particles"] = true, -- Disables all ParticleEmitter, Trail, Smoke, Fire and Sparkles
-        ["No Camera Effects"] = true, -- Disables all PostEffect's (Camera/Lighting Effects)
-        ["No Explosions"] = true, -- Makes Explosion's invisible
-        ["No Clothes"] = true, -- Removes Clothing from the game
-        ["Low Water Graphics"] = true, -- Removes Water Quality
-        ["No Shadows"] = true, -- Remove Shadows
-        ["Low Rendering"] = true, -- Lower Rendering
-        ["Low Quality Parts"] = true -- Lower quality parts
-    }
-}
-loadstring(game:HttpGet("https://raw.githubusercontent.com/CasperFlyModz/discord.gg-rips/main/FPSBooster.lua"))()
-
----------------------------
----------------------------
----------------------------
----------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/discordxj2shn0001/aid/main/fps%20booster', true))()
