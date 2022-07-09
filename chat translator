@@ -107,4 +107,4 @@ af = "Afrikaans",
 --]]
 
 global.NPCChat:say("Chat Translating.")
-end)
+
