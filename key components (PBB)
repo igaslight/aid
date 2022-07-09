@@ -1,0 +1,59 @@
+---------------------------
+---------------------------
+--pokemon brick bronze chat messages 
+---------------------------
+
+local global = "_p" --Way too easy tbh
+for i,v in pairs(debug.getregistry()) do
+if type(v) == 'function' then
+for i,v in pairs(debug.getupvalues(v)) do
+local ret,tab = pcall(function() return v["NPCChat"] end)
+if ret == true and type(tab) == "table" then
+global = v
+break
+end
+end
+end
+end
+
+
+---------------------------
+---------------------------
+---------------------------
+---------------------------
+
+ 
+Get = game:GetService("ReplicatedStorage").GET
+function GetMainData()
+    for i, v in pairs(debug.getregistry()) do
+        if typeof(v) == "function" then
+            for a, b in pairs(debug.getupvalues(v)) do
+                if typeof(b) == "table" and rawget(b, "Fishing") then
+                    return b
+                end
+            end
+        end
+    end
+end
+Data = GetMainData()
+AuthKey = debug.getupvalue(Data["Network"]["getAuthKey"], 1)
+ 
+local SF = {}
+SF["Fish"] = Data["Fishing"]["Fish"]
+SF["Fly"] = Data["Menu"]["map"]["fly"]
+ 
+AddButton("Heal", function()
+Get:InvokeServer(AuthKey, "PDS", "getPartyPokeBalls")
+end)
+
+local key = game:GetService("UserInputService")
+
+--key.InputBegan:Connect(function(input)
+--	if input.KeyCode == Enum.KeyCode.F then
+
+--global.NPCChat:say("Pokemon Fully Healed")
+--	end
+--end)
+
+
+
