@@ -82,6 +82,7 @@ end)
 
 Chann2:Button("CTRL + Click Tp", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/discordxj2shn0001/aid/main/ctrl%20%2B%20click%20tp"))()
+end
 
 Chann1:Button("Rejoin", function()
 loadstring(game:HttpGet("https://pastebin.com/raw/1gtVMUz3"))()
@@ -96,11 +97,11 @@ end)
 
 Chann2:Button("Chat Logger", function()
 loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/discordxj2shn0001/aid/main/chat%20logger', true))()
-
+end
 
 Chann2:Button("Chat Translator", function()
 loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/discordxj2shn0001/aid/main/chat%20translator', true))()
-
+end
 
 Chann2:Button("Absol + Eevee", function()
 loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/discordxj2shn0001/aid/main/absol%20%2B%20eevee', true))()
@@ -117,6 +118,7 @@ end)
 
 Chann5:Button("Afk Hatch", function()
 loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/discordxj2shn0001/aid/main/toggle%20spin%20in%20place', true))()
+end
 
 Chann5:Button("Daycare Man", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(259.499, 109.8, -1059.0546)
