@@ -52,19 +52,16 @@ local Chann5 = Tab1:Channel("Lagoona Lake (🐠)") -- Channel 0_0
 
 Chann1:Button("Heal", function()
 Get:InvokeServer(AuthKey, "PDS", "getPartyPokeBalls")
-
-DiscordLib:Notification("Notification", "Pokemon Healed", "Okay!") -- The Scirpt The Button Executes
+DiscordLib:Notification("Notification", "Pokemon Healed", "Okay!")
 end)
 
-
 Chann1:Button("Save (Broken)", function()
-
 local args = {
     [1] = "O@_^_<*i.4SAUL[0ti45",
     [2] = "PDS",
     [3] = "saveGame",
     [4] = {
---        ["location"] = "gniiCoXqvywjQ7LCdoeGAAAAAAgxor7edMIA",
+--      ["location"] = "gniiCoXqvywjQ7LCdoeGAAAAAAgxor7edMIA",
         ["expShareOn"] = false,
         ["options"] = {
             ["autosaveEnabled"] = false,
@@ -74,249 +71,42 @@ local args = {
         }
     }
 }
-
 game:GetService("ReplicatedStorage").GET:InvokeServer(unpack(args))
 end)
-
-
-
-
-
 
 Chann1:Button("Servers", function()
 loadstring(game:HttpGet("https://www.scriptblox.com/raw/Server-Browser_80", true))();
 DiscordLib:Notification("Notification", "Available Servers Listed", "Okay!") -- The Scirpt The Button Executes
-
 global.NPCChat:say("Opening Server List.")
-
 end)
 
 Chann2:Button("CTRL + Click Tp", function()
-local Plr = game:GetService("Players").LocalPlayer local Mouse = Plr:GetMouse()
-
-Mouse.Button1Down:connect( function() if not game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftControl) then return end if not Mouse.Target then return end Plr.Character:MoveTo(Mouse.Hit.p) end )
-DiscordLib:Notification("Notification", "Click + Tp Enabled", "Okay!") -- The Scirpt The Button Executes
-
-global.NPCChat:say("Click + Tp Enabled.")
-
-end)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/discordxj2shn0001/aid/main/ctrl%20%2B%20click%20tp"))()
 
 Chann1:Button("Rejoin", function()
 loadstring(game:HttpGet("https://pastebin.com/raw/1gtVMUz3"))()
-DiscordLib:Notification("Notification", "Rejoining Server", "Okay!") -- The Scirpt The Button Executes
-
+DiscordLib:Notification("Notification", "Rejoining Server", "Okay!")
 global.NPCChat:say("Rejoining Server.")
-
 end)
-
-
-
-
-
 
 Chann1:Button("Tiny Gui Script", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/discordxj2shn0001/aid/main/tiny%20gui%20pbb"))()
-DiscordLib:Notification("Notification", "Opening mini gui", "Okay!") -- The Scirpt The Button Executes
-
+DiscordLib:Notification("Notification", "Opening mini gui", "Okay!") 
 end)
-
-
-
-
-
-
-
-
-
-
-
 
 Chann2:Button("Chat Logger", function()
-local marketplaceService = game:GetService("MarketplaceService")
-
-local isSuccessful, info = pcall(marketplaceService.GetProductInfo, marketplaceService, Game.PlaceId)
-if isSuccessful then
-
-local wh = 'https://discord.com/api/webhooks/991047971292471318/yp6L9Cv1WERC8gTQsrRV0HWVIssypCmY-Z-hFsUuf83KpYBW6uvDlFvB3qj5RDdR__Zc'
-local embed1 = {
-       ['title'] = 'Beginning of Message logs on '..info.Name.." at "..tostring(os.date("%m/%d/%y at time %X"))
-   }
-local a = syn.request({
-   Url = wh,
-   Headers = {['Content-Type'] = 'application/json'},
-   Body = game:GetService("HttpService"):JSONEncode({['embeds'] = {embed1}, ['content'] = ''}),
-   Method = "POST"
-})
-function logMsg(Webhook, Player, Message)
-   local embed = {
-       ['description'] = Player..": "..Message.."  " ..tostring(os.date("| time %X")) 
-   }
-   local a = syn.request({
-       Url = Webhook,
-       Headers = {['Content-Type'] = 'application/json'},
-       Body = game:GetService("HttpService"):JSONEncode({['embeds'] = {embed}, ['content'] = ''}),
-       Method = "POST"
-   })
-end
-for i,v in pairs(game.Players:GetPlayers()) do
-   v.Chatted:Connect(function(msg)
-       logMsg(wh, v.Name, msg)
-   end)
-end
-
-game.Players.PlayerAdded:Connect(function(plr)
-   plr.Chatted:Connect(function(msg)
-       logMsg(wh, plr.Name, msg)
-   end)
-end)
-end
-end)
-
-
-
-
-
-
+loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/discordxj2shn0001/aid/main/chat%20logger', true))()
 
 
 Chann2:Button("Chat Translator", function()
-loadstring(game:HttpGetAsync('https://i.qts.life/r/ChatInlineTranslator.lua', true))()
---[[
-af = "Afrikaans",
-    sq = "Albanian",
-    am = "Amharic",
-    ar = "Arabic",
-    hy = "Armenian",
-    az = "Azerbaijani",
-    eu = "Basque",
-    be = "Belarusian",
-    bn = "Bengali",
-    bs = "Bosnian",
-    bg = "Bulgarian",
-    ca = "Catalan",
-    ceb = "Cebuano",
-    ny = "Chichewa",
-    ['zh-cn'] = "Chinese Simplified",
-    ['zh-tw'] = "Chinese Traditional",
-    co = "Corsican",
-    hr = "Croatian",
-    cs = "Czech",
-    da = "Danish",
-    nl = "Dutch",
-    en = "English",
-    eo = "Esperanto",
-    et = "Estonian",
-    tl = "Filipino",
-    fi = "Finnish",
-    fr = "French",
-    fy = "Frisian",
-    gl = "Galician",
-    ka = "Georgian",
-    de = "German",
-    el = "Greek",
-    gu = "Gujarati",
-    ht = "Haitian Creole",
-    ha = "Hausa",
-    haw = "Hawaiian",
-    iw = "Hebrew",
-    hi = "Hindi",
-    hmn = "Hmong",
-    hu = "Hungarian",
-    is = "Icelandic",
-    ig = "Igbo",
-    id = "Indonesian",
-    ga = "Irish",
-    it = "Italian",
-    ja = "Japanese",
-    jw = "Javanese",
-    kn = "Kannada",
-    kk = "Kazakh",
-    km = "Khmer",
-    ko = "Korean",
-    ku = "Kurdish (Kurmanji)",
-    ky = "Kyrgyz",
-    lo = "Lao",
-    la = "Latin",
-    lv = "Latvian",
-    lt = "Lithuanian",
-    lb = "Luxembourgish",
-    mk = "Macedonian",
-    mg = "Malagasy",
-    ms = "Malay",
-    ml = "Malayalam",
-    mt = "Maltese",
-    mi = "Maori",
-    mr = "Marathi",
-    mn = "Mongolian",
-    my = "Myanmar (Burmese)",
-    ne = "Nepali",
-    no = "Norwegian",
-    ps = "Pashto",
-    fa = "Persian",
-    pl = "Polish",
-    pt = "Portuguese",
-    pa = "Punjabi",
-    ro = "Romanian",
-    ru = "Russian",
-    sm = "Samoan",
-    gd = "Scots Gaelic",
-    sr = "Serbian",
-    st = "Sesotho",
-    sn = "Shona",
-    sd = "Sindhi",
-    si = "Sinhala",
-    sk = "Slovak",
-    sl = "Slovenian",
-    so = "Somali",
-    es = "Spanish",
-    su = "Sundanese",
-    sw = "Swahili",
-    sv = "Swedish",
-    tg = "Tajik",
-    ta = "Tamil",
-    te = "Telugu",
-    th = "Thai",
-    tr = "Turkish",
-    uk = "Ukrainian",
-    ur = "Urdu",
-    uz = "Uzbek",
-    vi = "Vietnamese",
-    cy = "Welsh",
-    xh = "Xhosa",
-    yi = "Yiddish",
-    yo = "Yoruba",
-    zu = "Zulu"
---]]
-
-global.NPCChat:say("Chat Translating.")
-end)
+loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/discordxj2shn0001/aid/main/chat%20translator', true))()
 
 
 Chann2:Button("Absol + Eevee", function()
-local _p = nil
-        for _, v in pairs(getgc(true)) do
-           if typeof(v) == "table" then
-               if rawget(v, "PlayerData") then
-                   _p = v
-                   break
-               end
-           end
-        end
-        
-        print(_p.PlayerData:completeEvent("GetAbsol"))
-        print(_p.PlayerData:completeEvent("Eevee2Awarded"))
-global.NPCChat:say("Free Pokemon.")
-end)
+loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/discordxj2shn0001/aid/main/absol%20%2B%20eevee', true))()
 
-
-
-
-
-
---Chann2:Toggle("Chat Logger",false, function(bool)
+--Chann2:Toggle("Put anything here",false, function(bool)
 --end)
-
-
 
 local sldr = Chann2:Slider("FPS Control", 15, 320, 144, function(t) -- A Slider
                                     -- lowest , largest , starting
@@ -325,46 +115,14 @@ pcall(set_fps_cap, t)
 print(t) -- Script The Slider Executes
 end)
 
-
-
-
-
-
 Chann5:Button("Afk Hatch", function()
- 
-    
---Services
-local uis = game:GetService('UserInputService');
-local vim = game:GetService("VirtualInputManager")
-local bind = Enum.KeyCode.M;
-
-
-uis.InputBegan:connect(function(key)
-    if key.KeyCode == bind then
-        --Key Script
-      
-        
-        vim:SendKeyEvent(true, "W", false, nil) vim:SendKeyEvent(true, "A", false, nil)
-       wait(0)
-        
-    end;
-end)
-
-
-global.NPCChat:say("Press m to toggle.")   
-DiscordLib:Notification("Notification", "Press m to toggle.", "Okay!") -- The Scirpt The Button Executes
-end)
-
+loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/discordxj2shn0001/aid/main/toggle%20spin%20in%20place', true))()
 
 Chann5:Button("Daycare Man", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(259.499, 109.8, -1059.0546)
 game.Players.LocalPlayer.Character.HumanoidRootPart.Rotation = Rotation.new(180, -75, 60)
-
-
-
 DiscordLib:Notification("Notification", "Going To Daycare Man.", "Okay!") -- The Scirpt The Button Executes
 global.NPCChat:say("Teleporting You.")
-
 end)
 
 
