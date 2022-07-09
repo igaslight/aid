@@ -18,4 +18,4 @@ end)
 
 global.NPCChat:say("Press m to toggle.")   
 DiscordLib:Notification("Notification", "Press m to toggle.", "Okay!") -- The Scirpt The Button Executes
-end)
+
