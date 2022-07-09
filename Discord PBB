@@ -34,6 +34,7 @@ local Chann2 = Tab1:Channel("Misc")
 local Chann3 = Tab1:Channel("Anthian City (💎)")
 local Chann4 = Tab1:Channel("Aredia City (💰)")
 local Chann5 = Tab1:Channel("Lagoona Lake (🐠)") 
+local Chann6 = Tab1:Channel("Submarine (🤿)")
 
 
 Chann1:Button("Heal", function()
@@ -143,6 +144,16 @@ Chann5:Button("PC", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(312, 110, -1066)
 DiscordLib:Notification("Notification", "Going To PC.", "Okay!") 
 global.NPCChat:say("Teleporting You.")
+end)
+
+Chann6:Button("Pokeball", function()
+game.Players.LocalPlayer.PlayerGui.FrontGui.Frame.Name = "Frame1"
+
+local Blocks = game.Players.LocalPlayer.PlayerGui.FrontGui.Frame.Frame.ImageButton
+
+for _, child in ipairs(Blocks:GetChildren()) do
+child.ImageTransparency = 0.4
+end
 end)
 
 Library:Init()
