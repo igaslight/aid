@@ -5,4 +5,4 @@ DiscordLib:Notification("Notification", "Click + Tp Enabled", "Okay!")
 
 global.NPCChat:say("Click + Tp Enabled.")
 
-end)
+
