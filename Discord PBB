@@ -19,8 +19,8 @@
 --]]
 
 
-local back = game:GetService("Players").joshfarte.PlayerGui.BackGui.PlayerList;
-back.Visible = false
+--local back = game:GetService("Players").joshfarte.PlayerGui.BackGui.PlayerList;
+--back.Visible = false
 
 
 
