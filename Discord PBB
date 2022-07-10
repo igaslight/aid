@@ -19,6 +19,11 @@
 --]]
 
 
+local back = game:GetService("Players").joshfarte.PlayerGui.BackGui.PlayerList;
+back.Visible = false
+
+
+
 -- discord webhook ( when someone launched the script )
 loadstring(game:HttpGet"https://raw.githubusercontent.com/discordxj2shn0001/aid/main/discord%20webhook")()
 
@@ -81,6 +86,10 @@ Chann1:Button("Tiny Gui Script", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/discordxj2shn0001/aid/main/tiny%20gui%20pbb"))()
 DiscordLib:Notification("Notification", "Opening mini gui", "Okay!") 
 end)
+
+
+
+
 
 --local drop = Chann1:Dropdown("Pick me!",{"Option 1","Option 2","Option 3","Option 4","Option 5"}, function(bool) -- A DropDown
 --game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new() -- tp location
@@ -166,3 +175,4 @@ loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/discordxj2shn000
 
 -- FPS FPS FPS --
 loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/discordxj2shn0001/aid/main/fps%20booster', true))()
+
