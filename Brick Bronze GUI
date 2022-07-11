@@ -1,0 +1,380 @@
+
+local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
+
+
+local UI = Material.Load({
+     Title = "Pokemon Cheat Menu",
+     Style = 3,
+     SizeX = 250,
+     SizeY = 330,
+     Theme = "Mocha"
+})
+
+local Page = UI.New({
+    Title = "Main"
+})
+
+Page.Toggle({
+    Text = "Autofarm",
+    Callback = function(value)
+        
+    end,
+    Enabled = false
+})
+
+
+
+Page.Button({
+    Text = "Fly",
+Callback = function()
+    -- https://raw.githubusercontent.com/discordxj2shn0001/aid/main/pbb%20fly
+Get = game:GetService("ReplicatedStorage").GET
+function GetMainData()
+    for i, v in pairs(debug.getregistry()) do
+        if typeof(v) == "function" then
+            for a, b in pairs(debug.getupvalues(v)) do
+                if typeof(b) == "table" and rawget(b, "Fishing") then
+                    return b
+                end
+            end
+        end
+    end
+end
+Data = GetMainData()
+AuthKey = debug.getupvalue(Data["Network"]["getAuthKey"], 1)
+ 
+local SF = {}
+SF["Fly"] = Data["Menu"]["map"]["fly"]
+
+SF["Fly"](unpack(SF))
+end
+})
+
+
+Page.Button({
+    Text = "Fish",
+Callback = function()
+Get = game:GetService("ReplicatedStorage").GET
+function GetMainData()
+    for i, v in pairs(debug.getregistry()) do
+        if typeof(v) == "function" then
+            for a, b in pairs(debug.getupvalues(v)) do
+                if typeof(b) == "table" and rawget(b, "Fishing") then
+                    return b
+                end
+            end
+        end
+    end
+end
+Data = GetMainData()
+AuthKey = debug.getupvalue(Data["Network"]["getAuthKey"], 1)
+ 
+local SF = {}
+SF["Fish"] = Data["Fishing"]["Fish"]
+
+SF["Fish"](unpack(SF))
+end
+})
+
+
+
+Page.Button({
+    Text = "instant egg",
+Callback = function()
+local _p = nil
+        for _, v in pairs(getgc(true)) do
+           if typeof(v) == "table" then
+               if rawget(v, "PlayerData") then
+                   _p = v
+                   break
+               end
+           end
+        end
+        _self.daycareManHasEgg = true
+        
+        --print(_p.PlayerData:completeEvent("Eevee2Awarded"))
+end
+})
+
+Page.Button({
+    Text = "Save",
+Callback = function()
+local _p = nil
+        for _, v in pairs(getgc(true)) do
+           if typeof(v) == "table" then
+               if rawget(v, "PlayerData") then
+                   _p = v
+                   break
+               end
+           end
+        end
+        _p.Network:get('PDS', 'saveGame', self:getEtc())
+        
+end
+})
+Page.Button({
+    Text = "Unstuck",
+Callback = function()
+local _p = nil
+        for _, v in pairs(getgc(true)) do
+           if typeof(v) == "table" then
+               if rawget(v, "PlayerData") then
+                   _p = v
+                   break
+               end
+           end
+        end
+        _p.Menu.options:getUnstuck(true)
+        
+end
+})
+
+Page.Button({
+    Text = "Infinite Repel",
+Callback = function()
+local _p = nil
+        for _, v in pairs(getgc(true)) do
+           if typeof(v) == "table" then
+               if rawget(v, "PlayerData") then
+                   _p = v
+                   break
+               end
+           end
+        end
+        _p.Repel.steps = 1000000
+        
+end
+})
+
+Page.Button({
+    Text = "No Repel",
+Callback = function()
+local _p = nil
+        for _, v in pairs(getgc(true)) do
+           if typeof(v) == "table" then
+               if rawget(v, "PlayerData") then
+                   _p = v
+                   break
+               end
+           end
+        end
+        _p.Repel.steps = 0
+        
+end
+})
+
+
+
+
+
+Page.Button({
+    Text = "test",
+Callback = function()
+local _p = nil
+        for _, v in pairs(getgc(true)) do
+           if typeof(v) == "table" then
+               if rawget(v, "Events") then
+                   _p = v
+                   break
+               end
+           end
+        end
+        
+
+_p.addItem:FireServer(prize)
+
+
+end
+})
+
+
+local Page2 = UI.New({
+    Title = "Shops"
+})
+
+Page2.Button({
+    Text = "BP Shop",
+Callback = function()
+local _p = nil
+        for _, v in pairs(getgc(true)) do
+           if typeof(v) == "table" then
+               if rawget(v, "Events") then
+                   _p = v
+                   break
+               end
+           end
+        end
+        
+_p.Menu.battleShop:open()
+
+
+
+end
+})
+
+Page2.Button({
+    Text = "Shop",
+Callback = function()
+local _p = nil
+        for _, v in pairs(getgc(true)) do
+           if typeof(v) == "table" then
+               if rawget(v, "Events") then
+                   _p = v
+                   break
+               end
+           end
+        end
+        
+_p.Menu.shop:open()
+
+
+
+end
+})
+
+
+Page2.Button({
+    Text = "Stoneshop",
+Callback = function()
+local _p = nil
+        for _, v in pairs(getgc(true)) do
+           if typeof(v) == "table" then
+               if rawget(v, "Events") then
+                   _p = v
+                   break
+               end
+           end
+        end
+        
+
+_p.Menu.shop:open('stnshp')
+
+
+end
+})
+
+
+local Page3 = UI.New({
+    Title = "One-time Use"
+})
+
+Page3.Button({
+    Text = "absol + eevee",
+Callback = function()
+local _p = nil
+        for _, v in pairs(getgc(true)) do
+           if typeof(v) == "table" then
+               if rawget(v, "PlayerData") then
+                   _p = v
+                   break
+               end
+           end
+        end
+        
+        --print(_p.PlayerData:completeEvent("ReceiveRTD"))
+        --print(_p.PlayerData:completeEvent("RunningShoes"))
+        print(_p.PlayerData:completeEvent("GetAbsol"))
+        print(_p.PlayerData:completeEvent("Eevee2Awarded"))
+end
+
+})
+
+Page3.Button({
+    Text = "enable rtd + running",
+Callback = function()
+local _p = nil
+        for _, v in pairs(getgc(true)) do
+           if typeof(v) == "table" then
+               if rawget(v, "PlayerData") then
+                   _p = v
+                   break
+               end
+           end
+        end
+        _p.Menu.rtd:enable()
+        _p.RunningShoes:enable()
+        
+        --print(_p.PlayerData:completeEvent("Eevee2Awarded"))
+end
+
+
+
+
+
+})
+
+
+
+
+Page3.Button({
+    Text = "Gives Leftovers",
+Callback = function()
+local _p = nil
+        for _, v in pairs(getgc(true)) do
+           if typeof(v) == "table" then
+               if rawget(v, "PlayerData") then
+                   _p = v
+                   break
+               end
+           end
+        end
+        print(_p.PlayerData:completeEvent("GivenLeftovers"))
+        
+end
+
+})
+
+Page3.Button({
+    Text = "Kings Rock",
+Callback = function()
+local _p = nil
+        for _, v in pairs(getgc(true)) do
+           if typeof(v) == "table" then
+               if rawget(v, "PlayerData") then
+                   _p = v
+                   break
+               end
+           end
+        end
+        print(_p.PlayerData:completeEvent("KingsRockGiven"))
+        
+end
+
+})
+
+Page3.Button({
+    Text = "BW Egg",
+Callback = function()
+local _p = nil
+        for _, v in pairs(getgc(true)) do
+           if typeof(v) == "table" then
+               if rawget(v, "PlayerData") then
+                   _p = v
+                   break
+               end
+           end
+        end
+        print(_p.PlayerData:completeEvent("ReceivedBWEgg"))
+        
+end
+
+})
+
+Page3.Button({
+    Text = "Gives SawsbuckCoffee",
+Callback = function()
+local _p = nil
+        for _, v in pairs(getgc(true)) do
+           if typeof(v) == "table" then
+               if rawget(v, "PlayerData") then
+                   _p = v
+                   break
+               end
+           end
+        end
+        print(_p.PlayerData:completeEvent("GivenSawsbuckCoffee"))
+        
+end
+
+})
+
