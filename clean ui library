@@ -694,7 +694,6 @@ function CreateNewButton(ButtonConfig, Parent)
 		CircleAnim(ButtonLabel, ThisTheme.ButtonAccent, ThisTheme.Button)
 		ButtonCallback()
 		local Args = {...}
-    		B.MouseButton1Down:connect(function()
         	Func(unpack(Args))
     end)
 	end)
