@@ -14,5 +14,7 @@ Data = GetMainData()
 AuthKey = debug.getupvalue(Data["Network"]["getAuthKey"], 1)
  
 local SF = {}
-SF["Fish"] = Data["Fishing"]["Fish"]
 SF["Fly"] = Data["Menu"]["map"]["fly"]
+
+SF["Fly"](unpack(SF))
+end
