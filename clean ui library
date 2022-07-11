@@ -693,6 +693,10 @@ function CreateNewButton(ButtonConfig, Parent)
 	Button.MouseButton1Down:Connect(function()
 		CircleAnim(ButtonLabel, ThisTheme.ButtonAccent, ThisTheme.Button)
 		ButtonCallback()
+		local Args = {...}
+    		B.MouseButton1Down:connect(function()
+        	Func(unpack(Args))
+    end)
 	end)
 
 	local MenuAdded = TryAddMenu(Button, Menu, {})
