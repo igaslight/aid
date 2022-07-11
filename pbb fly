@@ -17,4 +17,3 @@ local SF = {}
 SF["Fly"] = Data["Menu"]["map"]["fly"]
 
 SF["Fly"](unpack(SF))
-
