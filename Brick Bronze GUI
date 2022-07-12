@@ -26,6 +26,8 @@ local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinl
 
 -- discord webhook ( when someone launched the script )
 loadstring(game:HttpGet"https://raw.githubusercontent.com/discordxj2shn0001/aid/main/discord%20webhook")()
+-- ANTI AFK BLOCK --
+loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/discordxj2shn0001/aid/main/anti%20afk', true))()
 
 local UI = Material.Load({
      Title = "Pokemon Cheat Menu",
@@ -37,13 +39,6 @@ local UI = Material.Load({
 
 local Page = UI.New({
     Title = "Main"
-})
-
-Page.Button({
-    Text = "Pokeball Magnet",
-Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/hidden%20item%20magnet"))()
-end
 })
 
 Page.Button({
@@ -67,12 +62,32 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/discordxj2shn0001/New
 end
 })
 
+Page.Button({
+    Text = "Show UMV Rocks",
+Callback = function()
+loadstring(game:HttpGet("https://github.com/discordxj2shn0001/New-PBB-UI/blob/main/Show%20UMV%20Rocks"))()
+end
+})
 
 Page.Toggle({
     Text = "Repel",
     Callback = function(value)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/toggle%20repel"))()
     end
+})
+
+Page.Button({
+    Text = "Hidden Ball Magnet",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/hidden%20item%20magnet"))()
+end
+})
+
+Page.Button({
+    Text = "Hoverboard Hatch [M-Keypress]",
+Callback = function()
+loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/discordxj2shn0001/aid/main/toggle%20spin%20in%20place', true))()
+end
 })
 
 local Page2 = UI.New({
@@ -86,10 +101,57 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/discordxj2shn0001/New
     end
 })
 
+Page2.Slider({
+    Text = "Fps Control",
+    Callback = function(value)
+    pcall(setfpscap, value)
+    pcall(set_fps_cap, value)
+    end,
+    Min = 15,
+    Max = 300,
+    Def = 60
+})
+
+Page2.Button({
+    Text = "Fps Booster",
+Callback = function()
+loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/discordxj2shn0001/aid/main/fps%20booster', true))()
+end
+})
+
+Page2.TextField({
+    Text = "Chat Logger - webhook here",
+    Callback = function(value)
+loadstring(game:HttpGet("https://github.com/discordxj2shn0001/New-PBB-UI/blob/main/chat%20logger"))()
+    end
+})
+
+
+Page2.Button({
+    Text = "Chat Translator",
+Callback = function()
+loadstring(game:HttpGet("loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/discordxj2shn0001/aid/main/chat%20translator', true))()"))()
+end
+})
+
+Page2.Button({
+    Text = "Ctrl + Click TP",
+Callback = function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/discordxj2shn0001/aid/main/ctrl%20%2B%20click%20tp"))()
+end
+})
+
 Page2.Button({
     Text = "Rejoin",
 Callback = function()
 loadstring(game:HttpGet("https://pastebin.com/raw/1gtVMUz3"))()
+end
+})
+
+Page2.Button({
+    Text = "Servers",
+Callback = function()
+loadstring(game:HttpGet("https://www.scriptblox.com/raw/Server-Browser_80", true))();
 end
 })
 
@@ -123,14 +185,14 @@ local Page4 = UI.New({
 })
 
 Page4.Button({
-    Text = "absol + eevee",
+    Text = "Absol + Eevee",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/absol%20%2B%20eevee%20giver"))()
 end
 })
 
 Page4.Button({
-    Text = "enable rtd + running",
+    Text = "Enable RTD + Running",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/enable%20rtd%20%2B%20running"))()
 end
@@ -151,7 +213,7 @@ end
 })
 
 Page4.Button({
-    Text = "BW Egg",
+    Text = "BlackWhite Egg",
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/bw%20egg%20giver"))()
 end
@@ -162,7 +224,6 @@ Page4.Button({
 Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/coffee%20giver"))()    
 end
-
 })
 
 local Page5 = UI.New({
@@ -170,7 +231,7 @@ local Page5 = UI.New({
 })
 
 Page5.Button({
-    Text = "instant egg",
+    Text = "Instant Egg",
 Callback = function()
 local _p = nil
         for _, v in pairs(getgc(true)) do
