@@ -10,7 +10,7 @@ uis.InputBegan:connect(function(key)
       
         
         vim:SendKeyEvent(true, "W", false, nil) vim:SendKeyEvent(true, "A", false, nil)
-       wait(0)
+
         
     end;
 end)
