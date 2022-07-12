@@ -1,4 +1,27 @@
 
+
+--[[
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠞⢳⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡔⠋⠀⢰⠎⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⢆⣤⡞⠃⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⢠⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢀⣀⣾⢳⠀⠀⠀⠀⢸⢠⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣀⡤⠴⠊⠉⠀⠀⠈⠳⡀⠀⠀⠘⢎⠢⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀
+⠳⣄⠀⠀⡠⡤⡀⠀⠘⣇⡀⠀⠀⠀⠉⠓⠒⠺⠭⢵⣦⡀⠀⠀⠀
+⠀⢹⡆⠀⢷⡇⠁⠀⠀⣸⠇⠀⠀⠀⠀⠀⢠⢤⠀⠀⠘⢷⣆⡀⠀
+⠀⠀⠘⠒⢤⡄⠖⢾⣭⣤⣄⠀⡔⢢⠀⡀⠎⣸⠀⠀⠀⠀⠹⣿⡀         Pokemon Brick Bronze Cheat by j2sh
+⠀⠀⢀⡤⠜⠃⠀⠀⠘⠛⣿⢸⠀⡼⢠⠃⣤⡟⠀⠀⠀⠀⠀⣿⡇
+⠀⠀⠸⠶⠖⢏⠀⠀⢀⡤⠤⠇⣴⠏⡾⢱⡏⠁⠀⠀⠀⠀⢠⣿⠃
+⠀⠀⠀⠀⠀⠈⣇⡀⠿⠀⠀⠀⡽⣰⢶⡼⠇⠀⠀⠀⠀⣠⣿⠟⠀
+⠀⠀⠀⠀⠀⠀⠈⠳⢤⣀⡶⠤⣷⣅⡀⠀⠀⠀⣀⡠⢔⠕⠁⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠫⠿⠿⠿⠛⠋⠁⠀
+--]]
+
+
+
+
+
+
 local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
 
 -- discord webhook ( when someone launched the script )
@@ -19,73 +42,28 @@ local Page = UI.New({
 Page.Button({
     Text = "Pokeball Magnet",
 Callback = function()
-local lp = game:service'Players'.LocalPlayer;
-game:GetService("Workspace").chunk11["#Item"]:MoveTo(lp.Character.LeftHand.Position)
+loadstring(game:HttpGet("https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/hidden%20item%20magnet"))()
 end
 })
 
 Page.Button({
     Text = "Heal",
 Callback = function()
-Get = game:GetService("ReplicatedStorage").GET
-function GetMainData()
-    for i, v in pairs(debug.getregistry()) do
-        if typeof(v) == "function" then
-            for a, b in pairs(debug.getupvalues(v)) do
-                if typeof(b) == "table" and rawget(b, "Fishing") then
-                    return b
-                end
-            end
-        end
-    end
-end
-Data = GetMainData()
-AuthKey = debug.getupvalue(Data["Network"]["getAuthKey"], 1)
-local key = game:GetService("UserInputService")
-Get:InvokeServer(AuthKey, "PDS", "getPartyPokeBalls")
+loadstring(game:HttpGet("https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/heal"))()
 end
 })
-
 
 Page.Button({
     Text = "Fly",
 Callback = function()
-    -- https://raw.githubusercontent.com/discordxj2shn0001/aid/main/pbb%20fly
-Get = game:GetService("ReplicatedStorage").GET
-function GetMainData()
-    for i, v in pairs(debug.getregistry()) do
-        if typeof(v) == "function" then
-            for a, b in pairs(debug.getupvalues(v)) do
-                if typeof(b) == "table" and rawget(b, "Fishing") then
-                    return b
-                end
-            end
-        end
-    end
-end
-Data = GetMainData()
-AuthKey = debug.getupvalue(Data["Network"]["getAuthKey"], 1)
-local SF = {}
-SF["Fly"] = Data["Menu"]["map"]["fly"]
-SF["Fly"](unpack(SF))
+loadstring(game:HttpGet("https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/fly"))()
 end
 })
-
 
 Page.Button({
     Text = "Unstuck",
 Callback = function()
-local _p = nil
-        for _, v in pairs(getgc(true)) do
-           if typeof(v) == "table" then
-               if rawget(v, "PlayerData") then
-                   _p = v
-                   break
-               end
-           end
-        end
-        _p.Menu.options:getUnstuck(true)
-        
+loadstring(game:HttpGet("https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/unstuck"))()
 end
 })
 
@@ -93,20 +71,7 @@ end
 Page.Toggle({
     Text = "Repel",
     Callback = function(value)
-       local _p = nil
-        for _, v in pairs(getgc(true)) do
-           if typeof(v) == "table" then
-               if rawget(v, "PlayerData") then
-                   _p = v
-                   break
-               end
-           end
-        end
-        if(value) then _p.Repel.steps = 1000000
-        else
-        _p.Repel.steps = 0
-    end
-    Enabled = true
+loadstring(game:HttpGet("https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/toggle%20repel"))()
     end
 })
 
@@ -117,18 +82,7 @@ local Page2 = UI.New({
 Page2.TextField({
     Text = "Player Card Name",
     Callback = function(value)
-        local _p = nil
-        for _, v in pairs(getgc(true)) do
-           if typeof(v) == "table" then
-               if rawget(v, "PlayerData") then
-                   _p = v
-                   break
-               end
-           end
-        end
-        
-    _p.Network:post('PDS', 'chooseName', value)
-    
+loadstring(game:HttpGet("https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/player%20card%20name"))()
     end
 })
 
@@ -139,7 +93,6 @@ loadstring(game:HttpGet("https://pastebin.com/raw/1gtVMUz3"))()
 end
 })
 
-
 local Page3 = UI.New({
     Title = "Shops"
 })
@@ -147,64 +100,23 @@ local Page3 = UI.New({
 Page3.Button({
     Text = "BP Shop",
 Callback = function()
-local _p = nil
-        for _, v in pairs(getgc(true)) do
-           if typeof(v) == "table" then
-               if rawget(v, "Events") then
-                   _p = v
-                   break
-               end
-           end
-        end
-        
-_p.Menu.battleShop:open()
-
-
-
+loadstring(game:HttpGet("https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/BP%20shop"))()
 end
 })
 
 Page3.Button({
     Text = "Shop",
 Callback = function()
-local _p = nil
-        for _, v in pairs(getgc(true)) do
-           if typeof(v) == "table" then
-               if rawget(v, "Events") then
-                   _p = v
-                   break
-               end
-           end
-        end
-        
-_p.Menu.shop:open()
-
-
-
+loadstring(game:HttpGet("https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/Shop"))()
 end
 })
-
 
 Page3.Button({
     Text = "Stoneshop",
 Callback = function()
-local _p = nil
-        for _, v in pairs(getgc(true)) do
-           if typeof(v) == "table" then
-               if rawget(v, "Events") then
-                   _p = v
-                   break
-               end
-           end
-        end
-        
-
-_p.Menu.shop:open('stnshp')
-
-
+loadstring(game:HttpGet("https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/Stone%20Shop"))()
 end
 })
-
 
 local Page4 = UI.New({
     Title = "One-time Use"
@@ -213,119 +125,42 @@ local Page4 = UI.New({
 Page4.Button({
     Text = "absol + eevee",
 Callback = function()
-local _p = nil
-        for _, v in pairs(getgc(true)) do
-           if typeof(v) == "table" then
-               if rawget(v, "PlayerData") then
-                   _p = v
-                   break
-               end
-           end
-        end
-        
-        --print(_p.PlayerData:completeEvent("ReceiveRTD"))
-        --print(_p.PlayerData:completeEvent("RunningShoes"))
-        print(_p.PlayerData:completeEvent("GetAbsol"))
-        print(_p.PlayerData:completeEvent("Eevee2Awarded"))
+loadstring(game:HttpGet("https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/absol%20%2B%20eevee%20giver"))()
 end
-
 })
 
 Page4.Button({
     Text = "enable rtd + running",
 Callback = function()
-local _p = nil
-        for _, v in pairs(getgc(true)) do
-           if typeof(v) == "table" then
-               if rawget(v, "PlayerData") then
-                   _p = v
-                   break
-               end
-           end
-        end
-        _p.Menu.rtd:enable()
-        _p.RunningShoes:enable()
-        
-        --print(_p.PlayerData:completeEvent("Eevee2Awarded"))
+loadstring(game:HttpGet("https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/enable%20rtd%20%2B%20running"))()
 end
-
-
-
-
-
 })
-
-
-
 
 Page4.Button({
     Text = "Gives Leftovers",
 Callback = function()
-local _p = nil
-        for _, v in pairs(getgc(true)) do
-           if typeof(v) == "table" then
-               if rawget(v, "PlayerData") then
-                   _p = v
-                   break
-               end
-           end
-        end
-        print(_p.PlayerData:completeEvent("GivenLeftovers"))
-        
+loadstring(game:HttpGet("https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/give%20leftovers"))()
 end
-
 })
 
 Page4.Button({
     Text = "Kings Rock",
 Callback = function()
-local _p = nil
-        for _, v in pairs(getgc(true)) do
-           if typeof(v) == "table" then
-               if rawget(v, "PlayerData") then
-                   _p = v
-                   break
-               end
-           end
-        end
-        print(_p.PlayerData:completeEvent("KingsRockGiven"))
-        
+loadstring(game:HttpGet("https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/kings%20rock%20giver"))()
 end
-
 })
 
 Page4.Button({
     Text = "BW Egg",
 Callback = function()
-local _p = nil
-        for _, v in pairs(getgc(true)) do
-           if typeof(v) == "table" then
-               if rawget(v, "PlayerData") then
-                   _p = v
-                   break
-               end
-           end
-        end
-        print(_p.PlayerData:completeEvent("ReceivedBWEgg"))
-        
+loadstring(game:HttpGet("https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/bw%20egg%20giver"))()
 end
-
 })
 
 Page4.Button({
     Text = "Gives SawsbuckCoffee",
 Callback = function()
-local _p = nil
-        for _, v in pairs(getgc(true)) do
-           if typeof(v) == "table" then
-               if rawget(v, "PlayerData") then
-                   _p = v
-                   break
-               end
-           end
-        end
-        print(_p.PlayerData:completeEvent("GivenSawsbuckCoffee"))
-        
+loadstring(game:HttpGet("https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/coffee%20giver"))()    
 end
 
 })
