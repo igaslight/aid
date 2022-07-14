@@ -408,9 +408,7 @@ local data = {
           ["description"] = "Username: " .. game.Players.LocalPlayer.Name.." with **"..webhookcheck.."**".." said: "..value,
           ["type"] = "rich",
           ["color"] = tonumber(0x7269da),
-          ["image"] = {
-              ["url"] = "http://www.roblox.com/Thumbs/Avatar.ashx?x=150&y=150&Format=Png&username=" ..
-                  tostring(game:GetService("Players").LocalPlayer.Name)
+          ["thumbnail"] = {url = game.Players:GetUserThumbnailAsync(player.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size420x420)}
           }
       }
   }
