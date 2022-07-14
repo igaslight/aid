@@ -142,6 +142,13 @@ UI.Banner({
     Text = "Some buttons are location-sensitive, and some buttons function poorly. Please be sure to save after every action you perform. For example: save after every use of this gui's FLY button.                                                                          Thank you for using my script <3"
 })
 
+Page.Button2({
+    Text = "Hoverboard Spin ['M' - Toggle]",
+Callback = function()
+loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/discordxj2shn0001/aid/main/toggle%20spin%20in%20place', true))()
+end
+})
+
 Page2.Button({
     Text = "Egg Ready {Testing}",
 Callback = function()
@@ -163,7 +170,7 @@ end
 })
 
 Page2.Button({
-    Text = "PC",
+    Text = "PC - Lagoona",
     Callback = function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(312, 110, -1066)
 end
