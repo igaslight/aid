@@ -41,22 +41,22 @@ local Page = UI.New({
     Title = "Main"
 })
 
---[[
+
 Page.Dropdown({
     Text = "UI Theme",
     Callback = function(value)
     
-    if(value == Light) then loadstring(game:HttpGet"https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/Theme%20%3A%20Light")()
-    elseif(value == Dark) then loadstring(game:HttpGet"https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/Theme%20%3A%20Dark")()
-    elseif(value == Mocha) then loadstring(game:HttpGet"https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/Theme%20%3A%20Mocha")()
-    elseif(value == Aqua) then loadstring(game:HttpGet"https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/Theme%20%3A%20Aqua")()
-    elseif(value == Jester) then loadstring(game:HttpGet"https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/Theme%20%3A%20Jester")()    
+    if(value == "Light") then loadstring(game:HttpGet"https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/Theme%20%3A%20Light")()
+    elseif(value == "Dark") then loadstring(game:HttpGet"https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/Theme%20%3A%20Dark")()
+    elseif(value == "Mocha") then loadstring(game:HttpGet"https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/Theme%20%3A%20Mocha")()
+    elseif(value == "Aqua") then loadstring(game:HttpGet"https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/Theme%20%3A%20Aqua")()
+    elseif(value == "Jester") then loadstring(game:HttpGet"https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/Theme%20%3A%20Jester")()    
     end
     
     end,
     Options = {"Light", "Dark", "Mocha", "Aqua", "Jester"}
 })
---]]
+
 
 Page.Button({
     Text = "Skip Chat",
