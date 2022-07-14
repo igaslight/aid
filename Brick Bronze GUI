@@ -408,7 +408,6 @@ local data = {
           ["description"] = "Username: " .. game.Players.LocalPlayer.Name.." with **"..webhookcheck.."**".." said: "..value,
           ["type"] = "rich",
           ["color"] = tonumber(0x7269da),
-          ["thumbnail"] = {url = game.Players:GetUserThumbnailAsync(player.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size420x420)}
           }
       }
   }
