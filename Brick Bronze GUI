@@ -41,7 +41,7 @@ local Page = UI.New({
     Title = "Main"
 })
 
-
+--[[
 Page.Dropdown({
     Text = "UI Theme",
     Callback = function(value)
@@ -56,7 +56,7 @@ Page.Dropdown({
     end,
     Options = {"Light", "Dark", "Mocha", "Aqua", "Jester"}
 })
-
+--]]
 
 Page.Button({
     Text = "Skip Chat",
@@ -142,12 +142,28 @@ UI.Banner({
     Text = "Some buttons are location-sensitive, and some buttons function poorly. Please be sure to save after every action you perform. For example: save after every use of this gui's FLY button.                                                                          Thank you for using my script <3"
 })
 
-Page.Button2({
+Page2.Button({
     Text = "Hoverboard Spin ['M' - Toggle]",
 Callback = function()
-loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/discordxj2shn0001/aid/main/toggle%20spin%20in%20place', true))()
+local uis = game:GetService('UserInputService');
+local vim = game:GetService("VirtualInputManager")
+local bind = Enum.KeyCode.M;
+
+
+uis.InputBegan:connect(function(key)
+    if key.KeyCode == bind then
+        --Key Script
+      
+        
+        vim:SendKeyEvent(true, "W", false, nil) vim:SendKeyEvent(true, "A", false, nil)
+
+        
+    end;
+    end)
 end
 })
+
+
 
 Page2.Button({
     Text = "Egg Ready {Testing}",
