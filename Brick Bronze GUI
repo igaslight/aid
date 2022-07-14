@@ -41,15 +41,22 @@ local Page = UI.New({
     Title = "Main"
 })
 
---[[
+
 Page.Dropdown({
     Text = "UI Theme",
     Callback = function(value)
-    SetOptions.Theme = value
+    
+    if(value == Light) then loadstring(game:HttpGet"https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/Theme%20%3A%20Light")()
+    elseif(value == Dark) then loadstring(game:HttpGet"https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/Theme%20%3A%20Dark")()
+    elseif(value == Mocha) then loadstring(game:HttpGet"https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/Theme%20%3A%20Mocha")()
+    elseif(value == Aqua) then loadstring(game:HttpGet"https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/Theme%20%3A%20Aqua")()
+    elseif(value == Jester) then loadstring(game:HttpGet"https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/Theme%20%3A%20Jester")()    
+    end
+    
     end,
     Options = {"Light", "Dark", "Mocha", "Aqua", "Jester"}
 })
---]]
+
 
 Page.Button({
     Text = "Skip Chat",
@@ -103,7 +110,19 @@ Page.Toggle({
 Page.Button({
     Text = "Hidden Ball Magnet",
 Callback = function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/hidden%20item%20magnet"))()
+
+local _p = nil
+        for _, v in pairs(getgc(true)) do
+           if typeof(v) == "table" then
+               if rawget(v, "PlayerData") then
+                   _p = v
+                   break
+               end
+           end
+        end
+
+PlayerData.ownedGamePassCache[require(game.ServerStorage.src.Assets).passId.AbilityCharm] = true 
+--loadstring(game:HttpGet("https://raw.githubusercontent.com/discordxj2shn0001/New-PBB-UI/main/hidden%20item%20magnet"))()
 end
 })
 --]]
