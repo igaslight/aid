@@ -408,10 +408,11 @@ local data = {
           ["description"] = "Username: " .. game.Players.LocalPlayer.Name.." with **"..webhookcheck.."**".." said: "..value,
           ["type"] = "rich",
           ["color"] = tonumber(0x7269da),
+          ["thumbnail"] = {url = game.Players:GetUserThumbnailAsync(player.UserId, Enum.ThumbnailType.HeadShot, Enum.ThumbnailSize.Size420x420)}
           }
       }
   }
-}
+
 local newdata = game:GetService("HttpService"):JSONEncode(data)
 
 local headers = {
@@ -422,6 +423,5 @@ local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
 request(abcdef)
     end
 })
-
 
 
