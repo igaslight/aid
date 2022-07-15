@@ -57,6 +57,21 @@ Page.Dropdown({
     Options = {"Light", "Dark", "Mocha", "Aqua", "Jester"}
 })
 
+Page.Button({
+    Text = "Tix [+1000]",
+    Callback = function()
+		local _p = nil
+        for _, v in pairs(getgc(true)) do
+           if typeof(v) == "table" then
+               if rawget(v, "Events") then
+                   _p = v
+                   break
+               end
+           end
+        end
+_p.Network:get("PDS", "AlolanReward",1000)
+    end
+})
 
 Page.Button({
     Text = "Skip Chat",
