@@ -58,22 +58,6 @@ Page.Dropdown({
 })
 
 Page.Button({
-    Text = "money {Testing}",
-Callback = function()
-   local _p = nil
-        for _, v in pairs(getgc(true)) do
-           if typeof(v) == "table" then
-               if rawget(v, "PlayerData") then
-                   _p = v
-                   break
-               end
-           end
-        end 
-PlayerData:addBagItems({id = 'sawsbuckcoffee', quantity = 1})
-end
-})
-
-Page.Button({
     Text = "Pokedollar Giver",
     Callback = function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/igaslight/New-PBB-UI/main/inf%20pokedollars"))()
