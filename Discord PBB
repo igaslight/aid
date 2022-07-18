@@ -41,10 +41,9 @@ local Chann4 = Tab1:Channel("Aredia City (💰)")
 local Chann5 = Tab1:Channel("Lagoona Lake (🐠)") 
 local Chann6 = Tab1:Channel("Submarine (🤿)")
 
-
 Chann1:Button("Heal", function()
 Get:InvokeServer(AuthKey, "PDS", "getPartyPokeBalls")
-DiscordLib:Notification("Notification", "Pokemon Healed", "Okay!")
+DiscordLib:Notification("Notification", "buy premium script😡", "Okay!")
 end)
 
 Chann1:Button("Fly For Shinden", function()
@@ -81,7 +80,7 @@ loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/discordxj2shn000
 end)
 
 Chann2:Button("Absol + Eevee", function()
-loadstring(game:HttpGetAsync('https://raw.githubusercontent.com/discordxj2shn0001/aid/main/absol%20%2B%20eevee', true))()
+DiscordLib:Notification("Notification", "Premium Only Function", "Okay!")
 end)
 --Chann2:Toggle("Put anything here",false, function(bool)
 --end)
