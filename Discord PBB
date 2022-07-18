@@ -67,14 +67,6 @@ DiscordLib:Notification("Notification", "Rejoining Server", "Okay!")
 global.NPCChat:say("Rejoining Server.")
 end)
 
-Chann1:Button("Tiny Gui Script", function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/discordxj2shn0001/aid/main/tiny%20gui%20pbb"))()
-DiscordLib:Notification("Notification", "Opening mini gui", "Okay!") 
-end)
-
-
-
-
 
 --local drop = Chann1:Dropdown("Pick me!",{"Option 1","Option 2","Option 3","Option 4","Option 5"}, function(bool) -- A DropDown
 --game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new() -- tp location
@@ -113,20 +105,14 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-342.931
 --global.NPCChat:say("Teleporting You.")
 end)
 
-Chann4:Button("Money Farm TP", function()
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-364, 38, 1474.265)
-wait(10)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(1194.89001, 54, -702)
-end)
-
-Chann5:Button("Daycare Man", function()
+Chann4:Button("Daycare Man", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(259.499, 109.8, -1059.0546)
 game.Players.LocalPlayer.Character.HumanoidRootPart.Rotation = Rotation.new(180, -75, 60)
 DiscordLib:Notification("Notification", "Going To Daycare Man.", "Okay!") 
 global.NPCChat:say("Teleporting You.")
 end)
     
-Chann5:Button("PC", function()
+Chann4:Button("PC", function()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(312, 110, -1066)
 DiscordLib:Notification("Notification", "Going To PC.", "Okay!") 
 global.NPCChat:say("Teleporting You.")
